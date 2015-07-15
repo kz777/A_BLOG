@@ -1,0 +1,1 @@
+This is a simple blog, where I can create posts (as well as edit and delete them), visitors can comment on posts, and I can log in out out.
