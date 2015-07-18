@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  before_action :authenticate_user!, except: [:index, :show]
 
 
   def index	
@@ -41,7 +42,7 @@ class PostsController < ApplicationController
   	@post.destroy
 
   	redirect_to root_path
-  end
+  end 
 
 
 
