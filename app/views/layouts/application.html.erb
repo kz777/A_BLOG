@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+d<!DOCTYPE html>
 <html>
 <head>
   <title>Blog</title>
@@ -26,14 +26,14 @@
 			
 			
 			<li class="category">Social</li>
-			<li a href= "https://about.me/asus7">About Me</li>
-			<li a href= "https://github.com/kz777">Github</li>
-			<li a href= "https://www.linkedin.com/in/aslanussayev">Linkedin</li>
-			<li a href= "mailto:usprof777@gmail.com">Email</li>
+			 <li> <%= link_to "About Me", "https://about.me/asus7" %></li>
+			<li><%= link_to "Github", "https://github.com/kz777" %></li>
+			<li><%= link_to "Linkedin", "https://www.linkedin.com/in/aslanussayev" %></li>
+			<li><%= link_to "Email", "mailto:usprof777@gmail.com" %></li>
 		</ul>
 
 		<% if !user_signed_in? %>
-			<p class="sign_in">Admin Login</p>	
+			<p class="sign_in"><%= link_to "SIGN UP", new_user_registration_path %></p>
 		<% end %>
 	</div>
 
@@ -50,7 +50,12 @@
 			<% if user_signed_in? %>
 				<div class="buttons">
 					<button class="button"><%= link_to "New Post", new_post_path %></button>
-					<button class="button">Log Out</button>
+					<button class="button"><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></button>
+				</div>
+			<% else %>
+				<div class="buttons">
+					<button class="button"><%= link_to "New Post", new_post_path %></button>
+					<button class="button"><%= link_to "Log In", new_user_session_path, method: :get  %></button>
 				</div>
 			<% end %>
 		</div>
