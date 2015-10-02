@@ -33,7 +33,7 @@ d<!DOCTYPE html>
 		</ul>
 
 		<% if !user_signed_in? %>
-			<p class="sign_in"><%= link_to "SIGN UP", new_user_registration_path %></p>
+				<button class="sign_in"><%= link_to "Admin", new_user_session_path, method: :get  %></button>
 		<% end %>
 	</div>
 
@@ -51,11 +51,6 @@ d<!DOCTYPE html>
 				<div class="buttons">
 					<button class="button"><%= link_to "New Post", new_post_path %></button>
 					<button class="button"><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></button>
-				</div>
-			<% else %>
-				<div class="buttons">
-					<button class="button"><%= link_to "New Post", new_post_path %></button>
-					<button class="button"><%= link_to "Log In", new_user_session_path, method: :get  %></button>
 				</div>
 			<% end %>
 		</div>
